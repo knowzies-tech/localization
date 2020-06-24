@@ -86,6 +86,7 @@ class LocalizationController {
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateTranslationRequest $request, $id) {
+$lang = auth()->user()->language;
         Translation::updateOrCreate(
                 ['key' => $request->key, 'type' => $request->type, 'module' => $request->module, 'language' => $request->language], ['text' => $request->text, 'is_updated' => '1']
         );
