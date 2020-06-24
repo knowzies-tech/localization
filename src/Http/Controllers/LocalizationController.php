@@ -90,6 +90,8 @@ class LocalizationController {
                 ['key' => $request->key, 'type' => $request->type, 'module' => $request->module, 'language' => $request->language], ['text' => $request->text, 'is_updated' => '1']
         );
 
+        Cache::forget('translations_' . $lang . '_' . $request->type);
+        Cache::forget('translations_' . $lang . '_json');
         Cache::forget('translations_' . $request->language . '_' . $request->type);
         Cache::forget('translations_' . $request->language . '_json');
         return response(
