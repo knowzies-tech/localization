@@ -1,5 +1,5 @@
 {
-    "name": "rohitpavaskar/localization",
+    "name": "knowzies-tech/localization",
     "description": "Localization using labels stored in database and served using cache for performance",
     "type": "library",
     "require": {
